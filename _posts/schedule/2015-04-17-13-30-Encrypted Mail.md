@@ -11,6 +11,7 @@ track:
 difficulty:
 
 date: 2015-04-17 13:30
+duration: 45
 room: room 3
 ---
 

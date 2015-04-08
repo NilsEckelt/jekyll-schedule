@@ -2,6 +2,7 @@
 ---
 
 $blue: rgb(128, 201, 210)
+$violett: #71246A
 
 * 
   -webkit-box-sizing: border-box
@@ -33,100 +34,10 @@ h2
   text-transform: uppercase
   font-size: 2em
 
-a, h3
+h3
   font-weight: 600
   font-style: italic
   text-decoration: none
   line-height: .8em
 
-a
-  color: #71246A
-
-h3.time
-  padding-top: 20px
-
-header
-  width: 100%
-
-header>span
-  font-size: 2em
-  opacity: .3
-  font-weight: 800  
-  line-height: .6em
-  display: none
-
-.session
-  background-color: #fff
-  color: $blue
-  padding: 20px 10px
-.full
-  background-color: $blue
-  color: #fff
-  padding: 20px 10px
-
-/**
- * Schedule layout
- */
-.schedule section.day,
-.schedule section.slot 
-  clear: both
-
-@media (min-width: 51.25em) 
-  .schedule h3.time 
-    width: 17.02128%
-    float: left
-    margin-right: -100%
-    margin-left: 0%
-    clear: none
-  
-  .schedule [data-room="room-1-3"] 
-    width: 61.53191%
-    float: left
-    margin-right: -100%
-    margin-left: 18.14894%
-    clear: none
-  
-  .schedule [data-room="room-1"] 
-    width: 20.53191%
-    float: left
-    margin-right: -100%
-    margin-left: 18.14894%
-    clear: none
-  
-  .schedule [data-room="room-2"] 
-    width: 20.53191%
-    float: left
-    margin-right: -100%
-    margin-left: 38.50851%
-    clear: none
-  
-  .schedule [data-room="room-3"] 
-    width: 20.53191%
-    float: left
-    margin-left: 58.95%
-    margin-right: -100%
-    clear: none
-  
-  .schedule [data-room="room-4"] 
-    width: 20.53191%
-    float: right
-    margin-left: 0
-    margin-right: 0
-    clear: none
-  
-  .schedule .session .meta .room 
-    display: none
-  
-  .schedule .full 
-    width: 81.85106%
-    float: right
-    margin-left: 0
-    margin-right: 0
-    clear: none
-  
-  .session>h4
-    display: none
-
-  header>span
-    display: block
-
+@import 'columns'

@@ -1,0 +1,70 @@
+
+$timeHeight: 40px
+
+section.time
+	display: none
+
+span.time
+	font-style: italic
+	font-size: 1.6em
+	line-height: 0.9em
+	display: block
+	padding-bottom: 0
+	padding-top: 12px
+	height: $timeHeight
+	vertical-align: baseline
+
+
+.track 
+	>h3
+		display: table-cell
+		height: 80px	
+		vertical-align: bottom
+	display: inline-block
+	vertical-align: top
+	width: 100%
+
+section.track>article 
+	background: #fff
+	color: $blue
+	border-radius: 5px
+	padding: 5px 10px
+	margin-bottom: 5px
+
+
+section.track.time>article 
+	background: $blue
+	color: #fff
+
+.presenter
+	font-size: 1.2em
+	color: $violett
+	font-weight: 100
+
+
+// durations
+article[data-duration="15"]
+	height: 50px
+article[data-duration="30"]
+	height: 105px
+article[data-duration="45"]
+	height: 160px
+article[data-duration="60"]
+	height: 215px
+article[data-duration="75"]
+	height: 270px
+article[data-duration="90"]
+	height: 325px
+article[data-duration="105"]
+	height: 380px
+article[data-duration="120"]
+	height: 435px
+
+
+@media (min-width: 51.25em) 
+	.track 
+		width: 19.481%
+	section.time
+		display: inline-block
+	span.time
+		display: none
