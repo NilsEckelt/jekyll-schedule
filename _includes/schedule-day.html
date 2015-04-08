@@ -1,7 +1,7 @@
 {% if post.room == 'full' and post.accepted == true %}
 	{% include session-full.html %}
 {% elsif post.accepted == true %}
-	{% capture slot %}{% cycle 'begin', 'skip', 'end' %}{% endcapture %}
+	{% capture slot %}{% cycle 'begin', 'skip', 'skip', 'end' %}{% endcapture %}
 	
 	{% if slot == 'begin' %}
 		<section class="slot">
