@@ -4,7 +4,7 @@ permalink:
 published: true
 accepted: true
 
-title: Code of Conducts &ndash;<br>Take a pledge for better conferences
+title: Code of Conducts &ndash; Take a pledge for better conferences
 summary:
 presenters: Klaus
 track:
