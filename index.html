@@ -23,6 +23,7 @@ title: Local Office Day 2015
 </section>
 {% for nr in (1..4) %}
 <section class="track">
+	<div class="passed"></div>
 	{% case nr %}
 	{% when 1 %}
 		<h3>Communities / Ops</h3>
@@ -37,7 +38,6 @@ title: Local Office Day 2015
 	{% capture room %}room {{nr}}{% endcapture %}
 	{% for post in site.categories.session reversed %}
 		{% if post.room == 'full' or post.room == room or post.room == 'room 1-3' and nr != 4%}
-			<div class="passed"></div>
 			<span class="time">{{ post.date | date: "%H:%M" }}</span>
 			<article data-duration="{{ post.duration }}">
 				{% if post.permalink != null %}
