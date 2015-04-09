@@ -37,6 +37,7 @@ title: Local Office Day 2015
 	{% capture room %}room {{nr}}{% endcapture %}
 	{% for post in site.categories.session reversed %}
 		{% if post.room == 'full' or post.room == room or post.room == 'room 1-3' and nr != 4%}
+			<div class="passed"></div>
 			<span class="time">{{ post.date | date: "%H:%M" }}</span>
 			<article data-duration="{{ post.duration }}">
 				{% if post.permalink != null %}
@@ -45,8 +46,17 @@ title: Local Office Day 2015
 					<h3>{{ post.title }}</h3>
 				{% endif %}
 				<span class="presenter">{{ post.presenters }}</span>
+				<p>{{ post.description }}</p>
 			</article>
 		{% endif %}
 	{% endfor %}
 </section>
 {% endfor %}
+
+<script type="text/javascript">
+	var date = new Date;
+	var minutes = date.getMinutes();
+	var hour = date.getHours() % 12;
+
+	$('.passed').css('top', ((hour + (minutes / 60)) * 220) + 'px');
+</script>
