@@ -1,14 +1,11 @@
 ---
 layout: page
 ---
-
+<header><span>{{ page.room }}</span></header>
+<h1>{{ page.title }}</h1>
+<h2>{{ page.presenters }}</h2>
 <article class="session session-details">
-  <h1>{{ page.title }}</h1>
-  <p class="meta">Presenters: {{ page.presenters }}</p>
-
   <aside>
-    <p>Presented on {{ page.day }} at {{ page.start }} in {{ page.room }}</p>
-
     <ul class="meta">
       <li>Difficulty: {{ page.difficulty }}</li>
       <li>Track: {{ page.track }}</li>
