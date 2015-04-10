@@ -3,3 +3,4 @@ _site
 
 # Ignore Sass stuff
 .sass-cache
+**/.DS_Store
