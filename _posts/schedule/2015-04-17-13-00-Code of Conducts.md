@@ -5,7 +5,7 @@ published: true
 accepted: true
 
 title: Code of Conducts &ndash; Take a pledge for better conferences
-summary: Workhop for drafting a CoC policy for TW-sponsored events
+summary: Intro & Discussion on what <strong>you</strong> can do, and ThoughtWorks should do
 presenters: Klaus
 track:
 difficulty:
