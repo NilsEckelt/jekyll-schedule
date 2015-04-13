@@ -23,7 +23,7 @@ title: Local Office Day 2015
 	<article data-duration="60"><h3>19:00</h3></article>
 </section>
 {% for nr in (1..4) %}
-<section class="track">
+<section class="track" data-track="{{ nr }}">
 	<div class="passed"></div>
 	{% case nr %}
 	{% when 1 %}
@@ -43,7 +43,7 @@ title: Local Office Day 2015
 			{% if post.empty %}
 				<article class="empty" data-duration="{{ post.duration }}"></article>
 			{% else %}
-				<article data-duration="{{ post.duration }}">
+				<article data-duration="{{ post.duration }}" data-room="{{ post.room }}">
 					{% if post.permalink != null %}
 						<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
 					{% else %}
