@@ -15,4 +15,4 @@ duration: 45
 room: room 2
 ---
 
-<!-- This is an empty session so it doesn't need visible content -->
+Latest Research: How to build organic hard drives. How to store 1 Bit in one molecule

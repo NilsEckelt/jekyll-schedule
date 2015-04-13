@@ -15,4 +15,4 @@ duration: 45
 room: room 3
 ---
 
-<!-- This is an empty session so it doesn't need visible content -->
+Enabling participants to send and receive encrypted emails

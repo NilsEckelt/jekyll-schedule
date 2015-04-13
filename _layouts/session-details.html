@@ -1,19 +1,15 @@
 ---
 layout: page
 ---
-<header><span>{{ page.room }}</span></header>
+<header>
+  <button onclick="history.go(-1)">Back to Schedule</button>
+</header>
 <h1>{{ page.title }}</h1>
 <h2>{{ page.presenters }}</h2>
+<h2>{{ page.room }}</h2>
 <article class="session session-details">
-  <aside>
-    <ul class="meta">
-      <li>Difficulty: {{ page.difficulty }}</li>
-      <li>Track: {{ page.track }}</li>
-      {% if page.slides != null %}
-        <li><a href="{{ page.slides }}">View slides</a></li>
-      {% endif %}
-    </ul>
-  </aside>
-
   <div class="desc">{{ content }}</div>
+  {% if page.slides != null %}
+    <a href="{{ page.slides }}">View slides</a>
+  {% endif %}
 </article>
