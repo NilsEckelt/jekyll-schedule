@@ -23,6 +23,7 @@ span.time
 	vertical-align: top
 	width: 100%
 	position: relative
+	padding: 0
 
 section.track>article 
 	background: #fff
@@ -74,22 +75,6 @@ article[data-duration="270"]
 article.empty
 	visibility: hidden
 
-section[data-track="1"]
-	article[data-room="full"]
-		border-bottom-right-radius: 0
-		border-top-right-radius: 0
-section[data-track="2"]
-	article[data-room="full"]
-		border-radius: 0
-		border-radius: 0
-section[data-track="3"]
-	article[data-room="full"]
-		border-radius: 0
-		border-radius: 0
-section[data-track="4"]
-	article[data-room="full"]
-		border-bottom-left-radius: 0
-		border-top-left-radius: 0
 
 @media (min-width: 51.25em) 
 	.track 
@@ -98,3 +83,27 @@ section[data-track="4"]
 		display: inline-block
 	span.time
 		display: none
+
+	section[data-track="1"]
+		article[data-room="full"]
+			border-bottom-right-radius: 0
+			border-top-right-radius: 0
+	section[data-track="2"]
+		article[data-room="full"]
+			border-radius: 0
+			border-radius: 0
+	section[data-track="3"]
+		article[data-room="full"]
+			border-radius: 0
+			border-radius: 0
+	section[data-track="4"]
+		article[data-room="full"]
+			border-bottom-left-radius: 0
+			border-top-left-radius: 0
+
+	section[data-track="2"] > article[data-room="full"] > * 
+		visibility: hidden
+	section[data-track="3"] > article[data-room="full"] > * 
+		visibility: hidden
+	section[data-track="4"] > article[data-room="full"] > * 
+		visibility: hidden
