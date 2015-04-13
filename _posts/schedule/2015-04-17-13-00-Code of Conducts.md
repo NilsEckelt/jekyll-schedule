@@ -5,7 +5,7 @@ published: true
 accepted: true
 
 title: Code of Conducts &ndash; Take a pledge for better conferences
-summary:
+summary: Workhop for drafting a CoC policy for TW-sponsored events
 presenters: Klaus
 track:
 difficulty:

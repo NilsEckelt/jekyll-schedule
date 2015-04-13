@@ -5,7 +5,7 @@ published: true
 accepted: true
 
 title: Musings of a Corporate Entrerprise Consultant
-summary: 
+summary: Learnings from OTTO
 presenters: Christoph
 track:
 difficulty:
@@ -15,4 +15,4 @@ duration: 30
 room: room 1
 ---
 
-Learnings from OTTO
+

@@ -5,7 +5,7 @@ published: true
 accepted: true
 
 title: Encrypt your email
-summary:
+summary: Enabling participants to send and receive encrypted emails
 presenters: Elke
 track:
 difficulty:
@@ -15,4 +15,3 @@ duration: 45
 room: room 3
 ---
 
-Enabling participants to send and receive encrypted emails
