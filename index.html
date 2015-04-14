@@ -10,7 +10,6 @@ title: Local Office Day 2015
 	<h2>Spring 2015</h2>
 </header>
 
-
 <section class="track time">
 	<h3>&nbsp;</h3>
 	<article data-duration="60"><h3>12:00</h3></article>
@@ -21,23 +20,18 @@ title: Local Office Day 2015
 	<article data-duration="60"><h3>17:00</h3></article>
 	<article data-duration="60"><h3>18:00</h3></article>
 </section>
-{% for nr in (1..4) %}
-<section class="track" data-track="{{ nr }}">
-	<div class="passed"></div>
-	{% case nr %}
-	{% when 1 %}
-		<h3>Communities / Ops</h3>
-	{% when 2 %}
-		<h3>Developer / Tech</h3>
-	{% when 3 %}
-		<h3>Crypto / Security in our DNA</h3>
-	{% when 4 %}
-		<h3>Hack & make</h3>
-	{% endcase %}
 
-	{% capture room %}room {{nr}}{% endcapture %}
+
+
+{% assign tracks = "Communities / Ops|Developer / Tech|Crypto / Security in our DNA|Make & Hack" | split: "|" %}
+{% for track in tracks %}
+<section class="track" data-track="{{ forloop.index }}">
+	<div class="passed"></div>
+	
+	<h3>{{ track }}</h3>
+
 	{% for post in site.categories.session reversed %}
-		{% if post.room == 'full' or post.room == room or post.room == 'room 1-3' and nr != 4%}
+		{% if post.track == track or post.room == 'full' %}
 			<span class="time">{{ post.date | date: "%H:%M" }}</span>
 			{% if post.empty %}
 				<article class="empty" data-duration="{{ post.duration }}"></article>
@@ -46,7 +40,7 @@ title: Local Office Day 2015
 					{% if post.permalink != null %}
 						<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
 					{% else %}
-						<h3 onclick="window.location.href='/lodhh/{{ post.url }}'">{{ post.title }}</h3>
+						<h3 onclick="window.location.href='/lodhh{{ post.url }}'">{{ post.title }}</h3>
 					{% endif %}
 					<span class="presenter">{{ post.presenters }}</span>
 					{% if post.duration > 30 %}
