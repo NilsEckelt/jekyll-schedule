@@ -7,7 +7,7 @@ accepted: true
 title: Molecular electronics
 summary: Latest Research - How to build organic hard drives. How to store 1 Bit in one molecule
 presenters: Finn
-track:
+track: Developer / Tech
 difficulty:
 
 date: 2015-04-17 14:45

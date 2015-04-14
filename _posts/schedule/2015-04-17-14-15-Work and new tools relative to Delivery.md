@@ -7,7 +7,7 @@ accepted: true
 title: Work and new tools relative to Delivery
 summary:
 presenters: Nelson
-track:
+track: Communities / Ops
 difficulty:
 
 date: 2015-04-17 14:15
