@@ -6,7 +6,7 @@ accepted: true
 
 title: Musings of a Corporate Entrerprise Consultant
 summary: Learnings from OTTO
-presenters: Christoph
+presenters: Christoph, Anastasia, Florian, Finn
 track:
 difficulty:
 

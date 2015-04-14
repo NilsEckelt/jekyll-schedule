@@ -1,0 +1,117 @@
+
+$cyan: rgb(128, 201, 210)
+$blue: #35C5D5
+$half: 50%
+
+.screenly-presentation
+  display: none
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  font-family: 'Open Sans'
+  letter-spacing: -.06em
+  line-height: 1.8em
+
+h1, h2, p
+  -webkit-margin-before: 0em
+  -webkit-margin-after: 0em
+
+html,
+body,
+main
+  height: 100%
+
+body
+  margin: 0
+  width: 100%
+  > .container
+    width: 100%
+    height: 100%
+
+.container
+  height: 100%
+  > .left, 
+  > .right
+    position: absolute
+    bottom: 0
+    width: $half
+    padding: 5%
+    display: table-cell
+    vertical-align: middle
+  > .left
+    left: 0
+    text-align: right
+  > .right
+    right: 0
+
+.left > .container
+  color: #fff
+  display: inline-block
+  > h1
+    font-size: 6em
+    line-height: .8em
+    margin: 0 6px
+    text-transform: uppercase
+  > h2
+    font-size: 4em
+    line-height: .8em
+    font-style: italic
+    font-weight: 300
+    margin: 6px
+
+.screenly-presentation
+  .right
+    color: $cyan
+  .desc
+    position: relative
+    bottom: 0
+    margin-left: 20px
+    line-height: .9em
+    font-size: 1.2em
+    > h2
+      font-size: 1.5em
+      font-style: none
+      font-weight: 600
+      line-height: .8em 
+      margin-top: 40px
+      text-transform: uppercase
+    > p
+      font-size: 1.3em
+  dl
+    dt
+      font-size: 1.3em      
+    dd
+      font-size: 2em
+      font-weight: 600
+    .active
+      font-weight: 800
+
+
+.back1, .back2
+  position: absolute
+  height: 100%
+  width: $half
+  z-index: -1
+.back1
+  background: $cyan
+.back2
+  background: $blue
+  -webkit-animation: blend-in 5s infinite linear 
+@-webkit-keyframes blend-in
+  0%
+    width: 0
+    opacity: 1
+  60%
+    width: $half
+    opacity: 1
+  65%
+    width: $half
+    opacity: 1
+  95%
+    width: $half
+    opacity: 0
+  100%
+    opacity: 0
+    width: 0

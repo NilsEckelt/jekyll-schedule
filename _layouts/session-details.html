@@ -1,8 +1,18 @@
 ---
 layout: page
 ---
+<section class="session-detail">
 <header>
-  <button onclick="history.go(-1)">Back to Schedule</button>
+  <a href="/{{ baseurl }}"><button>Back to Schedule</button></a>
+  <!--
+	{% if page.previous %}
+		<a href="{{ page.previous.url }}"><button>{{ page.previous.title }}</button></a>
+	{% endif %}
+	{% if page.next %}
+		<a href="{{ page.next.url }}"><button>{{ page.next.title }}</button></a>
+	{% endif %}
+	-->
+  <button onclick="startPresentation()" style="opacity: .01">Screenly</button>
 </header>
 <h1>{{ page.title }}</h1>
 <h2>{{ page.presenters }}</h2>
@@ -13,3 +23,60 @@ layout: page
     <a href="{{ page.slides }}">View slides</a>
   {% endif %}
 </article>
+</section>
+
+<section class="screenly-presentation">
+	<div class="back1"></div>
+	<div class="back2"></div>
+	<div class="container">
+		<div class="left">
+			<div class="container">
+				<h1 class="title">{{ page.title }}</h1>
+				<h2 class="name">{{ page.presenters }}</h2>
+			</div>
+		</div>
+		<div class="right">
+			{% assign contentLength = (content | size) %}
+			{% if contentLength > 1 %}
+			<div class="desc">
+				<1-- content length: {{ contentLength }} -->
+				{{ content }}
+			</div>
+			{% else %}
+			<div class="container">
+				<dl>
+				{% for post in site.categories.session reversed %}
+					{% if post.room == page.room and post.empty != true and page.room != 'full' %}
+						{% assign class = "" %}
+						{% if post.title == page.title %}
+							{% assign class = "active" %}
+						{% endif %}
+						<dt class="{{ class }}">
+							{{ post.date | date: "%H:%M" }}
+						</dt>
+						<dd class="{{ class }}">
+							{{ post.title }}
+						</dd>
+					{% endif %}
+				{% endfor %}
+				</dl>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+<section>
+
+<script type="text/javascript">
+function startPresentation() {
+	document.getElementsByClassName('screenly-presentation')[0].style.display='block';
+	document.getElementsByClassName('session-detail')[0].style.display='none';
+	document.getElementsByTagName('body')[0].style.backgroundColor='white';
+}
+function autostart() {
+	var query = window.location;
+	if (window.location.search.indexOf('screenly')>0) {
+		startPresentation();
+	}
+}
+window.onload=autostart;
+</script>
