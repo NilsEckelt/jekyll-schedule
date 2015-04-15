@@ -25,25 +25,47 @@ layout: page
 </article>
 </section>
 
+{% assign active = false %}
+{% for post in site.categories.session reversed %}
+	{% if post.room == page.room and post.empty != true and page.room != 'full' %}
+		{% if active %}
+			{% assign next = post %}
+			{% assign active = false %}
+		{% endif %}
+		{% if post.title == page.title %}
+			{% assign active = true %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
 <section class="screenly-presentation">
 	<div class="back1"></div>
 	<div class="back2"></div>
 	<div class="container">
+
 		<div class="left">
-			<div class="container">
+			<div class="container now">
 				<h1 class="title">{{ page.title }}</h1>
 				<h2 class="name">{{ page.presenters }}</h2>
 			</div>
+			{% if next != null %}
+			<div class="container next">
+				<h3>{{ next.date | date: "%H:%M" }}</h3>
+				<h2 class="title">{{ next.title }}</h1>
+				<h3 class="name">{{ next.presenters }}</h2>
+			</div>
+			{% endif %}
 		</div>
+
 		<div class="right">
 			{% assign contentLength = (content | size) %}
 			{% if contentLength > 1 %}
 			<div class="desc">
-				<1-- content length: {{ contentLength }} -->
+				<!-- content length: {{ contentLength }} -->
 				{{ content }}
 			</div>
 			{% else %}
-			<div class="container">
+			<!--div class="container">
 				<dl>
 				{% for post in site.categories.session reversed %}
 					{% if post.room == page.room and post.empty != true and page.room != 'full' %}
@@ -60,7 +82,37 @@ layout: page
 					{% endif %}
 				{% endfor %}
 				</dl>
+			</div-->
+
+			{% if page.room != 'full' %}
+			<div class="container">
+			{% assign tracks = "Communities / Ops|Developer / Tech|Crypto / Security in our DNA|Make & Hack" | split: "|" %}
+			{% for track in tracks %}
+				{% unless page.track == track %}
+				<h2 class="other">{{ track }}</h2>
+				<dl>
+				{% for post in site.categories.session reversed | sort track %}
+					{% capture pagedurationInSec %}{{ page.duration | times: 60 }}{% endcapture %}
+					{% capture postdurationInSec %}{{ post.duration | times: 60 }}{% endcapture %}
+					{% capture pagestarttime %}{{ page.date | date: '%s'}}{% endcapture %}
+					{% capture poststarttime %}{{ post.date | date: '%s'}}{% endcapture %}
+					{% capture pageendtime %}{{ pagestarttime | plus: pagedurationInSec }}{% endcapture %}
+					{% capture postendtime %}{{ poststarttime | plus: postdurationInSec }}{% endcapture %}
+					{% if post.room != page.room and post.empty != true and page.room != 'full' and post.room != 'full' and poststarttime < pageendtime and postendtime > pagestarttime and post.track == track %}
+						<dt>
+							{{ post.date | date: "%H:%M" }}
+						</dt>
+						<dd onclick="window.location.href='{{ post.url }}?screenly">
+							{{ post.title }} <em>({{ post.presenters }})</em><br/>
+						</dd>
+					{% endif %}
+				{% endfor %}
+				</dl>
+				{% endunless %}
+			{% endfor %}
 			</div>
+			{% endif %}
+
 			{% endif %}
 		</div>
 	</div>
