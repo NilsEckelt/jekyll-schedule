@@ -1,3 +1,6 @@
+$slot: 45px // pro 15 min
+$gap: 5px
+
 section.time
 	display: none
 
@@ -29,7 +32,7 @@ section.track>article
 	background: #fff
 	color: $cyan
 	padding: 5px 10px
-	margin-bottom: 5px
+	margin-bottom: $gap
 	border-radius: 12px
 
 section.track.time
@@ -52,8 +55,6 @@ section.track.time>article
 
 // durations
 .track
-	$slot: 45px
-	$gap: 5px
 	> article[data-duration="15"]
 		height: 1 * $slot - $gap
 	> article[data-duration="30"]
