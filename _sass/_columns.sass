@@ -51,26 +51,29 @@ section.track.time>article
 		line-height: .9em
 
 // durations
-article[data-duration="15"]
-	height: 50px
-article[data-duration="30"]
-	height: 105px
-article[data-duration="45"]
-	height: 160px
-article[data-duration="60"]
-	height: 215px
-article[data-duration="75"]
-	height: 270px
-article[data-duration="90"]
-	height: 325px
-article[data-duration="105"]
-	height: 380px
-article[data-duration="120"]
-	height: 435px
-article[data-duration="240"]
-	height: 875px
-article[data-duration="270"]
-	height: 985px
+.track
+	$slot: 45px
+	$gap: 5px
+	> article[data-duration="15"]
+		height: 1 * $slot - $gap
+	> article[data-duration="30"]
+		height: 2 * $slot - $gap
+	> article[data-duration="45"]
+		height: 3 * $slot - $gap
+	> article[data-duration="60"]
+		height: 4 * $slot - $gap
+	> article[data-duration="75"]
+		height: 5 * $slot - $gap
+	> article[data-duration="90"]
+		height: 6 * $slot - $gap
+	> article[data-duration="105"]
+		height: 7 * $slot - $gap
+	> article[data-duration="120"]
+		height: 8 * $slot - $gap
+	> article[data-duration="240"]
+		height: 16 * $slot - $gap
+	> article[data-duration="270"]
+		height: 18 * $slot - $gap
 
 article.empty
 	visibility: hidden
