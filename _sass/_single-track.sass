@@ -1,0 +1,45 @@
+.single-track	
+	position: relative
+	display: none
+	height: 800px
+	width: 1280px
+	background-color: $blue
+	overflow: hidden
+	
+	h1
+		font-size: 3.5em
+	h3
+		display: inline
+		margin-right: 10px
+
+	.time
+		font-size: 1.3em
+
+	> article 
+		background: #fff
+		color: $cyan
+		padding: 5px 10px
+		margin: 0 10% 5px 10%
+		border-radius: 12px
+
+	// durations
+	> article[data-duration="15"]
+		height: 20px
+	> article[data-duration="30"]
+		height: 45px
+	> article[data-duration="45"]
+		height: 70px
+	> article[data-duration="60"]
+		height: 95px
+	> article[data-duration="75"]
+		height: 120px
+	> article[data-duration="90"]
+		height: 145px
+	> article[data-duration="105"]
+		height: 170px
+	> article[data-duration="120"]
+		height: 195px
+	> article[data-duration="240"]
+		height: 390px
+	> article[data-duration="270"]
+		height: 435px

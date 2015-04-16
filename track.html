@@ -1,0 +1,49 @@
+---
+layout: page
+---
+
+
+{% assign tracks = "Communities / Ops|Developer / Tech|Crypto / Security in our DNA|Make & Hack" | split: "|" %}
+{% for track in tracks %}
+<section class="single-track" data-track="{{ forloop.index }}">
+	<div class="passed"></div>
+	
+	<h1>{{ track }}</h1>
+
+	{% for post in site.categories.session reversed %}
+		{% if post.track == track or post.room == 'full' %}
+			{% if post.empty %}
+				<article class="empty" data-duration="{{ post.duration }}"></article>
+			{% else %}
+				<article data-duration="{{ post.duration }}" data-room="{{ post.room }}">
+					<span class="time">{{ post.date | date: "%H:%M" }}</span>
+					<h3>{{ post.title }}</h3>
+					<span class="presenter">{{ post.presenters }}</span>
+				</article>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</section>
+{% endfor %}
+
+<script type="text/javascript">
+function showTrack(id) {
+	console.log("show track " + id);
+	$('.single-track[data-track="'+id+'"]').show();
+}
+function updateTimeBar() {
+	var date = new Date;
+	var minutes = date.getMinutes();
+	var hour = date.getHours() % 12;
+
+	$('.passed').css('top', ((hour + (minutes / 60)) * 100) + 'px');
+
+	window.setTimeout('updateTimeBar()', 1000);
+}
+function autostart() {
+	updateTimeBar();
+	showTrack(window.location.search.substr(1));
+}
+window.onload=autostart;
+
+</script>

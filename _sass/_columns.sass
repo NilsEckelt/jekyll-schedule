@@ -1,7 +1,7 @@
 section.time
 	display: none
 
-span.time
+.track > span.time
 	font-style: italic
 	font-size: 1.6em
 	line-height: 0.9em
@@ -79,24 +79,24 @@ article.empty
 @media (min-width: 51.25em) 
 	.track 
 		width: 21.981%
+		> span.time
+			display: none
 	section.time
 		display: inline-block
-	span.time
-		display: none
 
-	section[data-track="1"]
+	section[data-track="1"].track
 		article[data-room="full"]
 			border-bottom-right-radius: 0
 			border-top-right-radius: 0
-	section[data-track="2"]
+	section[data-track="2"].track
 		article[data-room="full"]
 			border-radius: 0
 			border-radius: 0
-	section[data-track="3"]
+	section[data-track="3"].track
 		article[data-room="full"]
 			border-radius: 0
 			border-radius: 0
-	section[data-track="4"]
+	section[data-track="4"].track
 		article[data-room="full"]
 			border-bottom-left-radius: 0
 			border-top-left-radius: 0
