@@ -1,4 +1,5 @@
-
+$slot: 28px
+$gap: 5px
 
 .single-track	
 	position: relative
@@ -22,12 +23,10 @@
 		background: #fff
 		color: $cyan
 		padding: 5px 10px
-		margin: 0 10% 5px 10%
+		margin: 0 10% $gap 10%
 		border-radius: 12px
 
 	// durations
-	$slot: 28px
-	$gap: 5px
 	> article[data-duration="15"]
 		height: 1 * $slot - $gap
 	> article[data-duration="30"]
