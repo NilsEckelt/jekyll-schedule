@@ -28,7 +28,7 @@ title: Local Office Day 2015
 <section class="track" data-track="{{ forloop.index }}">
 	<div class="passed"></div>
 	
-	<h3>{{ track }}</h3>
+	<h3 onclick="window.location.href='/lodhh/track/?{{ forloop.index }}">{{ track }}</h3>
 
 	{% for post in site.categories.session reversed %}
 		{% if post.track == track or post.room == 'full' %}
