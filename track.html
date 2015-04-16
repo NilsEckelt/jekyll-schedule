@@ -36,7 +36,7 @@ function updateTimeBar() {
 	var minutes = date.getMinutes();
 	var hour = date.getHours() % 12;
 
-	$('.passed').css('top', ((hour + (minutes / 60)) * 100) + 'px');
+	$('.passed').css('top', ((hour + (minutes / 60)) * 98) + 'px');
 
 	window.setTimeout('updateTimeBar()', 1000);
 }
